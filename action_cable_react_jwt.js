@@ -233,6 +233,8 @@
                 };
 
                 Connection.prototype.open = function() {
+                    try {
+                        
                     if (this.isActive()) {
                         ActionCable.log("Attempted to open WebSocket, but existing socket is " + (this.getState()));
                         return false;
@@ -247,6 +249,10 @@
                         this.installEventHandlers();
                         this.monitor.start();
                         return true;
+                    }
+                    } catch(e) {
+                        console.log('Error caught:', e);
+                        return false;
                     }
                 };
 
