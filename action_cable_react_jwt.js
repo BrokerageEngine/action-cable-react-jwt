@@ -247,7 +247,7 @@
                              console.log('new conn websocket != null');
                             this.uninstallEventHandlers();
                         }
-                        this.webSocket = new WebSocket(this.consumer.url, protocols.concat(this.consumer.jwt));
+                        this.webSocket = new WebSocket(this.consumer.url, protocols.concat(escape(this.consumer.jwt)));
                         this.webSocket.protocol = 'actioncable-v1-json';
                         this.installEventHandlers();
                         this.monitor.start();
