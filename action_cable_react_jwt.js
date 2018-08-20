@@ -234,17 +234,17 @@
 
                 Connection.prototype.open = function() {
                     try {
-                    console.log(this);
+                    //console.log(this);
                     if (this.isActive()) {
-                        console.log('isActive');
+                        //console.log('isActive');
                         ActionCable.log("Attempted to open WebSocket, but existing socket is " + (this.getState()));
                         return false;
                         // throw new Error("Existing connection must be closed before opening");
                     } else {
-                        console.log('new conn');
+                        //console.log('new conn');
                         ActionCable.log("Opening WebSocket, current state is " + (this.getState()) + ", subprotocols: " + protocols);
                         if (this.webSocket != null) {
-                             console.log('new conn websocket != null');
+                             //console.log('new conn websocket != null');
                             this.uninstallEventHandlers();
                         }
                         this.webSocket = new WebSocket(this.consumer.url, protocols.concat(escape(this.consumer.jwt)));
