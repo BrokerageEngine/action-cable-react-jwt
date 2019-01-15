@@ -231,17 +231,22 @@
                         return false;
                     }
                 };
+                Connection.prototype.prototolList = function() {
+                    return(protocols);
+                }
 
                 Connection.prototype.open = function() {
                     try {
                     //console.log(this);
                     if (this.isActive()) {
-                        //console.log('isActive');
                         ActionCable.log("Attempted to open WebSocket, but existing socket is " + (this.getState()));
                         return false;
                         // throw new Error("Existing connection must be closed before opening");
                     } else {
                         //console.log('new conn');
+                        ActionCable.log("URL", this.consumer.url);
+                        ActionCable.log("Protocols", protocols);
+                        ActionCable.log("Websockt Options", protocols.concat(escape(this.consumer.jwt)));
                         ActionCable.log("Opening WebSocket, current state is " + (this.getState()) + ", subprotocols: " + protocols);
                         if (this.webSocket != null) {
                              //console.log('new conn websocket != null');

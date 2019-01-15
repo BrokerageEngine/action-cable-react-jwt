@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zekedran/action-cable-react-jwt.git"
+    "url": "git+https://github.com/BrokerageEngine/action-cable-react-jwt.git"
   },
   "keywords": [
     "jwt",
@@ -19,7 +19,7 @@
   "author": "Zeke Dran",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zekedran/action-cable-react-jwt/issues"
+    "url": "https://github.com/BrokerageEngine/action-cable-react-jwt/issues"
   },
-  "homepage": "https://github.com/zekedran/action-cable-react-jwt#readme"
+  "homepage": "https://github.com/BrokerageEngine/action-cable-react-jwt#readme"
 }
